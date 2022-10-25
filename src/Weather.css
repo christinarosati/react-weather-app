@@ -1,0 +1,66 @@
+.Weather {
+  color: #090089;
+}
+
+.Weather .current-temperature {
+  text-align: center;
+}
+
+.Weather .current-temp {
+  font-size: 40px;
+}
+
+.Weather .description {
+  text-transform: capitalize;
+}
+
+.Weather .units {
+  position: relative;
+  top: -16px;
+}
+
+.Weather .additional-details {
+  font-size: 18px;
+  padding-right: 100px;
+  padding-top: 10px;
+}
+
+.Weather h1 {
+  padding-top: 10px;
+  padding-left: 30px;
+  color: #090089;
+}
+
+.Weather .current-time {
+  font-size: 17px;
+  padding-left: 30px;
+  list-style: none;
+  margin-left: 0;
+
+  color: #090089;
+}
+
+.Weather .form-control {
+  position: relative;
+  top: 10px;
+  right: 15px;
+}
+
+.Weather .current-location-button {
+  position: relative;
+  top: 10px;
+  left: 25px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: #090089;
+  color: #fff;
+  border: 1px solid #090089;
+  box-shadow: rgb(9 0 137 / 8%) 0px 8px 8px 0;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.Weatheer .current-location-button:hover {
+  background: #fff;
+  color: #090089;
+}
