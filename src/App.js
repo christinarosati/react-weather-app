@@ -12,7 +12,7 @@ export default function App() {
       </div>
       <small>
         <a
-          href="https://github.com/christinarosati/weather-app-react"
+          href="https://github.com/christinarosati/react-weather-app"
           target="_blank"
           rel="noreferrer"
         >
