@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import { RotatingLines } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -80,6 +81,14 @@ export default function Weather(props) {
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
 
-    return "Loading...";
+    return (
+      <RotatingLines
+        strokeColor="#090089"
+        strokeWidth="5"
+        animationDuration="0.75"
+        width="100"
+        visible={true}
+      />
+    );
   }
 }
