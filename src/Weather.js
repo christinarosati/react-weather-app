@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import { RotatingLines } from "react-loader-spinner";
 
 export default function Weather(props) {
@@ -16,7 +17,7 @@ export default function Weather(props) {
       description: response.data.condition.description,
       iconUrl:
         "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png",
-      date: "Tuesday, 1:58",
+      date: new Date(response.data.time * 1000),
     });
   }
 
@@ -27,7 +28,9 @@ export default function Weather(props) {
           <div className="col-4">
             <h1>{weatherData.city}</h1>
             <ul className="current-time">
-              <li>Last updated: {weatherData.date}</li>
+              <li>
+                <FormattedDate date={weatherData.date} />
+              </li>
             </ul>
           </div>
           <div className="col-4">
