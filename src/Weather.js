@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import { RotatingLines } from "react-loader-spinner";
 
 export default function Weather(props) {
@@ -24,22 +25,9 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <div className="row">
-          <div className="col-4">
-            <h1>{weatherData.city}</h1>
-            <ul className="current-time">
-              <li>
-                <FormattedDate date={weatherData.date} />
-              </li>
-            </ul>
-          </div>
-          <div className="col-4">
-            <button className="current-location-button">
-              Current Location
-            </button>
-          </div>
-          <div className="col-4">
-            <form>
+        <form>
+          <div className="row">
+            <div className="col-9">
               <input
                 type="search"
                 placeholder="Search a city..."
@@ -48,8 +36,25 @@ export default function Weather(props) {
                 autoFocus="on"
                 id="search-city-form-input"
               />
+            </div>
+            <div className="col-3">
               <input type="submit" value="Go" className="form-control" />
-            </form>
+            </div>
+          </div>
+        </form>
+        <div className="row">
+          <div className="col-6">
+            <h1>{weatherData.city}</h1>
+            <ul className="current-time">
+              <li>
+                <FormattedDate date={weatherData.date} />
+              </li>
+            </ul>
+          </div>
+          <div className="col-6">
+            <button className="current-location-button">
+              Current Location
+            </button>
           </div>
         </div>
         <div className="row">
