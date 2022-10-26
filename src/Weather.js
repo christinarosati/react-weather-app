@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
 import { RotatingLines } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -22,10 +22,26 @@ export default function Weather(props) {
     });
   }
 
+  function search() {
+    const apiKey = "26084fo2fac06a1093710e4da1a8b28t";
+    let units = "metric";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -34,7 +50,7 @@ export default function Weather(props) {
                 className="form-control"
                 autoComplete="off"
                 autoFocus="on"
-                id="search-city-form-input"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
@@ -46,11 +62,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "26084fo2fac06a1093710e4da1a8b28t";
-    let units = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return (
       <RotatingLines
         strokeColor="#090089"
