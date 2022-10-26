@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import { RotatingLines } from "react-loader-spinner";
 
 export default function Weather(props) {
@@ -41,45 +42,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <div className="row">
-          <div className="col-6">
-            <h1>{weatherData.city}</h1>
-            <ul className="current-time">
-              <li>
-                <FormattedDate date={weatherData.date} />
-              </li>
-            </ul>
-          </div>
-          <div className="col-6">
-            <button className="current-location-button">
-              Current Location
-            </button>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-6">
-            <ul className="current-temperature">
-              <li>
-                <span className="current-temp">{weatherData.temperature}</span>
-                <span className="units">°C</span>
-              </li>
-              <li className="description">{weatherData.description}</li>
-              <li>
-                <img src={weatherData.iconUrl} alt={weatherData.description} />
-              </li>
-            </ul>
-          </div>
-          <div className="col-6">
-            <ul className="additional-details">
-              <li>
-                <strong>Wind:</strong> {weatherData.wind} km/h
-              </li>
-              <li>
-                <strong>Humidity:</strong> {weatherData.humidity}%
-              </li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
