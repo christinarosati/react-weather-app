@@ -28,13 +28,12 @@
 .Weather h1 {
   padding-top: 20px;
   margin-right: 60px;
-
   color: #090089;
 }
 
 .Weather .current-time {
   font-size: 17px;
-  padding-left: 30px;
+  margin-right: 20px;
   list-style: none;
 
   color: #090089;
