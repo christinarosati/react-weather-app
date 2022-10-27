@@ -11,6 +11,7 @@ export default function WeatherForecast() {
             <img
               src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
               width="42"
+              alt="rainy-day"
             />
           </div>
           <div className="WeatherForecast-temperature">
