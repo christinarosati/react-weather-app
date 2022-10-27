@@ -4,19 +4,18 @@
 
 .Weather .current-temperature {
   text-align: center;
-}
-
-.Weather .current-temp {
   font-size: 40px;
 }
 
 .Weather .description {
   text-transform: capitalize;
+  font-size: 17px;
 }
 
 .Weather .units {
   position: relative;
-  top: -16px;
+  top: -15px;
+  font-size: 17px;
 }
 
 .Weather .additional-details {
