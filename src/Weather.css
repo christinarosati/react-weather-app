@@ -23,6 +23,7 @@
   font-size: 18px;
   padding-right: 100px;
   padding-top: 10px;
+  text-align: center;
 }
 
 .Weather h1 {
@@ -32,8 +33,8 @@
 }
 
 .Weather .current-time {
-  font-size: 17px;
-  margin-right: 25px;
+  font-size: 18px;
+  margin-right: 100px;
   list-style: none;
 
   color: #090089;
