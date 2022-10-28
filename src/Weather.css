@@ -45,12 +45,7 @@
   border-radius: 10px;
 }
 
-.Weather .current-location-button {
-  position: relative;
-  top: 15px;
-  left: 75px;
-  padding: 5px 5px;
-  border-radius: 10px;
+.Weather .button {
   background: #090089;
   color: #fff;
   border: 1px solid #090089;
@@ -59,7 +54,7 @@
   cursor: pointer;
 }
 
-.Weather .current-location-button:hover {
+.Weather .button:hover {
   background: #fff;
   color: #090089;
 }

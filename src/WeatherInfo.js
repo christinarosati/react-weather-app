@@ -13,9 +13,6 @@ export default function WeatherInfo(props) {
             </li>
           </ul>
         </div>
-        <div className="col-6">
-          <button className="current-location-button">Current Location</button>
-        </div>
       </div>
       <div className="row">
         <div className="col-6">
